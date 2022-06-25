@@ -1,28 +1,20 @@
-from statistics import mode
+from typing_extensions import Self
 from django.db import models
 
 # Create your models here.
 
-class taipei (mode.Model):
-    area = models.CharField(max_length=20)
-    layer = models.CharField(max_length=20)
-    build_type = models.CharField(max_length=20)
-  
+# Create your models here.
+class build_info(models.Model):
+
+    build_area = models.CharField(max_length=20 ,blank=True ,help_text='鄉鎮市區')
+    total_number_floors = models.CharField(max_length=20 , blank=True,help_text='總樓層數') 
+    build_type = models.CharField(max_length=20 ,blank=True,help_text= '建物型態')
+    build_city = models.CharField(max_length=20, blank=True,help_text= '建物城市')
+    #  以下省略 ...
 
     class Meta:
-        db_table = "aig_counter_types"
+        db_table = "build_info"
+        ordering = ["build_city"]
 
     def __str__(self):
-        return self.area
-
-        
-class city (models.Model):
-
-    id = models.IntegerField(primary_key=True)
-    text = models.CharField(max_length=20)
-
-    class Meta:
-        db_table = "aig_counter_types"
-
-    def __str__(self):
-        return self.text
+        return self.build_area

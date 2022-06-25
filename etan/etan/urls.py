@@ -15,7 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from main_web.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/property_asset_build_area' , property_asset_build_area , name='property_asset_build_area'),
+    path('api/property_asset_number_floor',property_asset_number_floor ,name='property_asset_number_floor'),
+    path('api/property_asset_build_type',property_asset_build_type , name='property_asset_build_type'),
+    path('api/int_to_chine' ,int_to_chine , name='int_to_chine')
 ]
+
+
+

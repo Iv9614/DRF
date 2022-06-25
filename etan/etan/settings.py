@@ -77,6 +77,7 @@ WSGI_APPLICATION = 'etan.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# 應急暫時用sqlite
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
