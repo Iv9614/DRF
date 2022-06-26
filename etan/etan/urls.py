@@ -19,10 +19,10 @@ from main_web.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/property_asset＿build_area' , property_asset＿build_area),
-    path('api/property_asset＿number_floor/<int : floor>',property_asset＿number_floor),
-    path('api/property_asset＿build_type',property_asset＿build_type)
-]
+    path('api/v1/property_asset＿build_area' , property_asset＿build_area , name='property_asset＿build_area'),
+    path('api/v1/property_asset＿number_floor/<int:trans_num>',property_asset＿number_floor ,name='property_asset＿number_floor'),
+    path('api/v1/property_asset＿build_type',property_asset＿build_type , name='property_asset＿build_type')
+    ]
 
 
 
